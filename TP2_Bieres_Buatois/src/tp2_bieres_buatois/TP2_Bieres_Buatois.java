@@ -13,7 +13,7 @@ public class TP2_Bieres_Buatois {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) { 
         // TODO code application logic here
         BouteilleBiere autreBiere = new BouteilleBiere("Leffe", 6.6,
                  "Abbaye de Leffe");
