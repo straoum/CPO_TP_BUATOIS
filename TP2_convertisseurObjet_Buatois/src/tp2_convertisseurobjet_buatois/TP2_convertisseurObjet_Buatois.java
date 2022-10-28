@@ -25,8 +25,66 @@ public class TP2_convertisseurObjet_Buatois {
         System.out.println(convert1);
         
         Scanner sc = new Scanner(System.in); 
+        System.out.println("Quelles conversion voulez-vous faire: 1: Celsius-->Kelvin \n 2: Kelvin-->Celsius \n 3: Farenheit-->Celsius \n 4: Celsius-->Farenheit \n 5: Kelvin-->Farenheit \n 6: Farenheit-->Kelvin");
+        int a = sc.nextInt(); 
+        double temp=1.0;
+        
+        
+        if (a==1) {
+   
+           Convertisseur conversionchoisie = new Convertisseur();
+           conversionchoisie.CelciusVersKelvin(temp);
+           System.out.println(conversionchoisie);
+    
+        }
+        if (a==2) {
+   
+           Convertisseur conversionchoisie = new Convertisseur();
+           conversionchoisie.CelciusVersKelvin(temp);
+           System.out.println(conversionchoisie);
+    
+        }
+        if (a==3) {
+   
+           Convertisseur conversionchoisie = new Convertisseur();
+           conversionchoisie.KelvinVersCelcius(temp);
+           System.out.println(conversionchoisie);
+        }
+    
+        if (a==4) {
+   
+           Convertisseur conversionchoisie = new Convertisseur();
+           conversionchoisie.FarenheitVersCelcius(temp);
+           System.out.println(conversionchoisie);
+    
+        }   
+        if (a==5) {
+   
+           Convertisseur conversionchoisie = new Convertisseur();
+           conversionchoisie.CelciusVersFarenheit(temp);
+           System.out.println(conversionchoisie);
+    
+        }
+        
+      
+        if (a==6) {
+   
+           Convertisseur conversionchoisie = new Convertisseur();
+           conversionchoisie.KelvinVersFarenheit(temp);
+           System.out.println(conversionchoisie);
+    
+        } 
+        
+        if (a==6) {
+   
+           Convertisseur conversionchoisie = new Convertisseur();
+           conversionchoisie.FarenheitVersKelvin(temp);
+           System.out.println(conversionchoisie);
+    
+        } 
         
     }
+    
    
     
 }
