@@ -29,7 +29,11 @@ public class TP2_manip_BUATOIS {
          //   Moussaka assiette666 = assiette1 ;
          //  Moussaka assiette667 = new Tartiflette() ; c'est incorrect car il est impossible de mélanger les classes Tartiflettes et Moussaka
         
-        Moussaka [] Tab
+        Moussaka [] Tab = new Moussaka[10];
+        for (int i=0; i<10; i++) {
+            Tab[i] = new Moussaka(200+i);
+           
+        }
 
     }
 }
