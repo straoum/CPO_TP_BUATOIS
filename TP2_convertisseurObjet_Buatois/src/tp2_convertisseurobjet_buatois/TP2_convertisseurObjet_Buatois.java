@@ -4,6 +4,8 @@
  */
 package tp2_convertisseurobjet_buatois;
 
+import java.util.Scanner;
+
 /**
  *
  * @author User
@@ -21,6 +23,10 @@ public class TP2_convertisseurObjet_Buatois {
         convert1.CelciusVersFarenheit(12); //exécution du convertisseur de degrés Celcius en Farenheit
         convert1.FarenheitVersCelcius(172); //exécution du convertisseur de degrés Farenheit en Celcius
         System.out.println(convert1);
+        
+        Scanner sc = new Scanner(System.in); 
+        
     }
+   
     
 }
