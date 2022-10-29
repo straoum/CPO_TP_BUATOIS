@@ -45,7 +45,7 @@ public class TP2_relation_BUATOIS {
         
         System.out.println("la premiere voiture de Reno est " + reno.liste_voitures[0] ) ; // affchage des voitures de Reno
         System.out.println("la deuxième voiture de Reno est " +reno.liste_voitures[1] ) ;
-
+  
 
     }
 }
