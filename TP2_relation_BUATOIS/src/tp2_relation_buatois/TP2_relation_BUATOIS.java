@@ -15,7 +15,7 @@ public class TP2_relation_BUATOIS {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-
+        //création des nouvelles voitures et personnes
         Voiture uneClio = new Voiture("Clio", "Renault", 5);
         Voiture uneAutreClio = new Voiture("Clio", "Renault", 5);
         Voiture une2008 = new Voiture("2008", "Peugeot", 6);
@@ -23,11 +23,11 @@ public class TP2_relation_BUATOIS {
         Personne bob = new Personne("Bobby", "Sixkiller");
         Personne reno = new Personne("Reno", "Raines");
 
-        bob.liste_voitures[0] = uneClio;
+        bob.liste_voitures[0] = uneClio; //attribution d'une clio à Bob comme première voiture
         bob.nbVoitures = 1;
         uneClio.proprietaire = bob;
         
-        bob.liste_voitures[1] = une2008;
+        bob.liste_voitures[1] = une2008;//atribution d'une 2008 à Bob comme deuxième voiture
         bob.nbVoitures = 1;
         une2008.proprietaire = bob;
         
@@ -39,11 +39,11 @@ public class TP2_relation_BUATOIS {
         reno.nbVoitures = 1;
         uneMicra.proprietaire = reno;
 
-        System.out.println("liste des voitures disponibles :\n" + uneClio + "\n" + uneAutreClio + "\n" + une2008 + "\n" + uneMicra);
-        System.out.println("la premiere voiture de Bob est " +bob.liste_voitures[0] ) ;
+        System.out.println("liste des voitures disponibles :\n" + uneClio + "\n" + uneAutreClio + "\n" + une2008 + "\n" + uneMicra); //affichage des voitures dispos
+        System.out.println("la premiere voiture de Bob est " +bob.liste_voitures[0] ) ; //affichage des voitures de Bob
         System.out.println("la deuxième voiture de Bob est " +bob.liste_voitures[1] ) ;
         
-        System.out.println("la premiere voiture de Reno est " + reno.liste_voitures[0] ) ;
+        System.out.println("la premiere voiture de Reno est " + reno.liste_voitures[0] ) ; // affchage des voitures de Reno
         System.out.println("la deuxième voiture de Reno est " +reno.liste_voitures[1] ) ;
 
 
