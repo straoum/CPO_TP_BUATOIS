@@ -16,20 +16,21 @@ public class TP2_manip_BUATOIS {
     public static void main(String[] args) {
         // TODO code application logic here
 
-        Tartiflette assiette1 = new Tartiflette(500);
+        Tartiflette assiette1 = new Tartiflette(500); //création de nouvelles tartiflettes
         Tartiflette assiette2 = new Tartiflette(700);
+        
+        //Les assiettes 2 et 3 sont les mêmes (prouvé par le même nombre de calories) donc il y a seulement 2 objets de créés
 
-        Tartiflette assiette3 = assiette2;
+        Tartiflette assiette3 = assiette2; //inversion d'assiette 1 et assiette 2
         assiette2 = assiette1;
         assiette1 = assiette3;
 
-        System.out.println("nb de calories de Assiette 2 : " + assiette2.nbCalories);
+        System.out.println("nb de calories de Assiette 2 : " + assiette2.nbCalories); //affichage
         System.out.println("nb de calories de Assiette 3 : " + assiette3.nbCalories);
         
-         //   Moussaka assiette666 = assiette1 ;
-         //  Moussaka assiette667 = new Tartiflette() ; c'est incorrect car il est impossible de mélanger les classes Tartiflettes et Moussaka
+         //  ; c// les lignes "Moussaka assiette667 = new Tartiflette() ;" et "Moussaka assiette666 = assiette1 ;" sont fausses car elles référencent un type d'objet autre que ce qu'elles annoncent référencer
         
-        Moussaka [] Tab = new Moussaka[10];
+        Moussaka [] Tab = new Moussaka[10]; //on met dans une liste de type moussaka 10 nouvelles moussaka différentes
         for (int i=0; i<10; i++) {
             Tab[i] = new Moussaka(200+i);
            
