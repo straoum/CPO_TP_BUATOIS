@@ -26,7 +26,7 @@ public class Epée extends Arme{
 
     @Override
     public String toString() {
-        return "Ep\u00e9e{" + "indice=" + indice + '}';
+        return "Indice de finesse :" + indice + "nom :"+nom+"niveau d'attaque :"+ this.getAttaque();
     }
     
 }
