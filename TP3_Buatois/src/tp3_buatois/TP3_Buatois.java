@@ -4,6 +4,9 @@
  */
 package tp3_buatois;
 
+import Personnages.Guerrier;
+import Personnages.Magicien;
+import Personnages.Personnage;
 import Armes.Epée;
 import Armes.Bâton;
 import Armes.Arme;
