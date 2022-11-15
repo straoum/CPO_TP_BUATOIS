@@ -4,6 +4,8 @@
  */
 package tp3_buatois;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author User
@@ -16,16 +18,22 @@ public class TP3_Buatois {
     public static void main(String[] args) {
         // TODO code application logic here
         Arme m = new Arme("Arme Standard",40);
-        Bâton baton1 = new Bâton(4,"Chêne",5);
+        Bâton baton1 = new Bâton(4,"Chêne",5); //création de 2 bâtons et 2 épées
         Epée epee1 = new Epée(7, "Excalibur",5);
         Bâton baton2 = new Bâton(5,"Charme",6);
-        Epée epee2 = new Epee(4,"Durandal",7);
-       
+        Epée epee2 = new Epée(4,"Durandal",7);
         
-         
+        ArrayList<Arme> tabArme = new ArrayList<Arme>();
         
-
+        tabArme.add(baton1);
+        tabArme.add(baton2);
+        tabArme.add(epee1);
+        tabArme.add(epee2);
         
+        int a = tabArme.size();
+        for (int i=0;i<a;i++){
+            System.out.println("voici les caractéristiques de l'arme :"+tabArme.get(i));
+        }
         
     }
     
