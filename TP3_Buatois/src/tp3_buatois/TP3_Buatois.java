@@ -4,7 +4,11 @@
  */
 package tp3_buatois;
 
+import Armes.Epée;
+import Armes.Bâton;
+import Armes.Arme;
 import java.util.ArrayList;
+
 
 /**
  *
