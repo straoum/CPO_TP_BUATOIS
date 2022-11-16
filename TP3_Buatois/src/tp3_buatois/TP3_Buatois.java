@@ -68,15 +68,35 @@ public class TP3_Buatois {
     Epée epee4 = new Epée(7, "Charles-Henri",5);
     Epée epee5 = new Epée(7, "Jo",5);
     
-    guerrier3.Ajout_arme(epee3); //AJout d'armes dans l'inventaire du guerrier
+    guerrier3.Ajout_arme(epee3); //Ajout d'armes dans l'inventaire du guerrier
     guerrier3.Ajout_arme(epee4);
     guerrier3.Ajout_arme(baton3);
     guerrier3.Methode_arme(epee3);
+    
+    tabpersonnage.add(magicien3); 
+    tabpersonnage.add(guerrier3);
     
     magicien3.Ajout_arme(baton4); //Ajout d'armes dans l'inventaire du magicien
     magicien3.Ajout_arme(baton5);
     magicien3.Ajout_arme(epee4);
     magicien3.Methode_arme(baton4);
+    
+    int y = tabArme.size(); //affichage des informations sur les personnages
+        for (int i=0;i<y;i++){
+            System.out.println("voici les informations sur le personnage :\\"+tabpersonnage.get(i)+"le personnage possède dans son inventaire les armes suivantes :");
+            
+        }
+        //affichage des caractéristiques des personnages 
+    System.out.println("Les caractéristiques du personnage sont :" +tabpersonnage.get(0));
+    magicien1.ArmePréférée();
+    System.out.println("Les caractéristiques du personnage sont :" +tabpersonnage.get(1));
+    magicien2.ArmePréférée();
+    System.out.println("Les caractéristiques du personnage sont :" +tabpersonnage.get(2));
+    System.out.println("Les caractéristiques du personnage sont :" +tabpersonnage.get(3));
+    System.out.println("Les caractéristiques du personnage sont :" +tabpersonnage.get(4));
+    magicien3.ArmePréférée();
+    System.out.println("Les caractéristiques du personnage sont :" +tabpersonnage.get(5));
+    
     }
    
 
