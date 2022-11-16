@@ -67,6 +67,16 @@ public class TP3_Buatois {
     Epée epee3 = new Epée(7, "Gertrude",5);
     Epée epee4 = new Epée(7, "Charles-Henri",5);
     Epée epee5 = new Epée(7, "Jo",5);
+    
+    guerrier3.Ajout_arme(epee3); //AJout d'armes dans l'inventaire du guerrier
+    guerrier3.Ajout_arme(epee4);
+    guerrier3.Ajout_arme(baton3);
+    guerrier3.Methode_arme(epee3);
+    
+    magicien3.Ajout_arme(baton4); //Ajout d'armes dans l'inventaire du magicien
+    magicien3.Ajout_arme(baton5);
+    magicien3.Ajout_arme(epee4);
+    magicien3.Methode_arme(baton4);
     }
    
 
