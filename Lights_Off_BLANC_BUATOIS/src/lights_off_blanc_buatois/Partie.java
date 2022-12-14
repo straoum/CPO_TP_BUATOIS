@@ -26,9 +26,9 @@ public class Partie {
     
     public void partie(){
         Scanner rep = new Scanner(System.in);
-        System.out.println("1)Niveau 1 avec coup illimité  2)Niveau 2 coup restraint à 100");
+        System.out.println("1)Niveau 1 avec coup illimité  2)Niveau 2 coup restraint à 50");
         int niveau=rep.nextInt();
-        int cpt=100;
+        int cpt=50;
         Grille.affichergrilledansconsole();
         if (niveau==1){
             while (Grille.gagner()==false){
@@ -70,7 +70,8 @@ public class Partie {
             if (cpt==0){
                 System.out.println(" vous avez perdu");
             }else{
-                System.out.println("vous avez gagné");
+                cpt=50-cpt;
+                System.out.println("vous avez gagné en "+cpt+" coup" );
             }
         }
     }
