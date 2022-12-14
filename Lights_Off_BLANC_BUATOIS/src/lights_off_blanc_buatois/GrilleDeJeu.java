@@ -18,7 +18,18 @@ public class GrilleDeJeu {
         for (int l=0;l<5;l++){
             for (int c=0;c<5;c++){
                 grille[l][c]=new Cellules_Lumineuses();
+                if (randomlumière()==true){
+                    eteindreLumiere(l,c);
+                }
             }
+        }
+    }
+    
+    public boolean randomlumière(){
+        if (Math.random()>0.5){
+            return true;
+        }else{
+            return false;
         }
     }
     
@@ -32,13 +43,13 @@ public class GrilleDeJeu {
     
     public void allumerLumiere(int l, int c){
         if (this.presenceLumiere(l, c)==false){
-            lumiereCourant = "allumé";
+            grille[l][c].allumerLumiere();
         }
     }
     
     public void eteindreLumiere(int l, int c){
         if (this.presenceLumiere(l, c)==true){
-            lumiereCourant = "éteint";
+            grille[l][c].eteindreLumiere();
         }
     }
     
@@ -152,4 +163,32 @@ public class GrilleDeJeu {
             }
         }
     }
+    
+    public boolean gagner(){
+        int a=0;
+        for (int l=0; l<5;l++){
+            for (int c=0;c<5;c++){
+                if (presenceLumiere(l, c)==false){
+                    a=a+1;
+                }
+            }
+        }
+        if (a==25){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
+    public void affichergrilledansconsole(){
+        for (int l=4;l>-1;l--){
+            for (int c=4;c>-1;c--){
+                System.out.print("["+grille[l][c]+"]");
+                if ( c== 4){
+                    System.out.print("\n");
+                }
+            }
+        }
+    }
+
 }

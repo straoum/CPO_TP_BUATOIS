@@ -16,7 +16,6 @@ public class Cellules_Lumineuses {
     }
     
     
-    
    public boolean presenceLumiere(){
         if ("allumé".equals(lumiereCourant)){
             return true;

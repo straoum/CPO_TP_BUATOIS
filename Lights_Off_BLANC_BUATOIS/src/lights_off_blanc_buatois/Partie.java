@@ -19,8 +19,21 @@ public class Partie {
         Grille = new GrilleDeJeu();
         Scanner sc = new Scanner(System.in);
         System.out.println("Entrer votre nom :");
-        JoueurCourant.nom = sc.next();
+        //JoueurCourant.nom = sc.nextLine();        
+        JoueurCourant = new Joueur(sc.nextLine());
+        Grille.affichergrilledansconsole();
+    }
+    
+    public void partie(){
         
-        
+        while (Grille.gagner()==false){
+            System.out.println(" taper un nombre entre 1 et 5 compris pour la ligne");
+            Scanner repl = new Scanner(System.in);
+            int l = repl.nextInt();
+            System.out.println(" taper un nombre entre 1 et 5 compris pour la colonne");
+            Scanner repc = new Scanner(System.in);
+            int c = repc.nextInt();
+            
+        }
     }
 }
