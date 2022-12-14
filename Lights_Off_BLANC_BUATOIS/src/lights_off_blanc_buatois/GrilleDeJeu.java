@@ -54,7 +54,7 @@ public class GrilleDeJeu {
     }
     
     public void clicutilisateur(int l,int c){
-        if (presenceLumiere(l, c)==true){ //allume ou eteint la case cliqué
+        if (presenceLumiere(l, c)==false){ //allume ou eteint la case cliqué
             allumerLumiere(l, c);
         }else{
             eteindreLumiere(l, c);   
@@ -62,38 +62,38 @@ public class GrilleDeJeu {
         if (l==0 || l==4){
             if (c==0 || c==4){
                 if (l==0 && (c==0 || c==4)){ // ligne du bas
-                    if (presenceLumiere(l+1, c)==true){
+                    if (presenceLumiere(l+1, c)==false){
                         allumerLumiere(l+1, c);
                     }else{
                         eteindreLumiere(l+1, c);   
                     }
                     if (c==4){ // coins bas droit
-                        if (presenceLumiere(l, c-1)==true){
+                        if (presenceLumiere(l, c-1)==false){
                             allumerLumiere(l, c-1);
                         }else{
                             eteindreLumiere(l, c-1);   
                         }
                     }else{ // coins bas gauche
-                        if (presenceLumiere(l, c+1)==true){
+                        if (presenceLumiere(l, c+1)==false){
                             allumerLumiere(l, c+1);
                         }else{
                             eteindreLumiere(l, c+1);   
                         }
                     }
                 }else if (l==4 && (c==0 || c==4)){ // ligne du haut
-                    if (presenceLumiere(l-1, c)==true){
+                    if (presenceLumiere(l-1, c)==false){
                         allumerLumiere(l-1, c);
                     }else{
                         eteindreLumiere(l-1, c);   
                     }
                     if (c==4){ // coins haut droit
-                        if (presenceLumiere(l, c-1)==true){
+                        if (presenceLumiere(l, c-1)==false){
                             allumerLumiere(l, c-1);
                         }else{
                             eteindreLumiere(l, c-1);   
                         }
                     }else{ // coins haut gauche
-                        if (presenceLumiere(l, c+1)==true){
+                        if (presenceLumiere(l, c+1)==false){
                             allumerLumiere(l, c+1);
                         }else{
                             eteindreLumiere(l, c+1);   
@@ -101,25 +101,25 @@ public class GrilleDeJeu {
                     }
                 } 
             }else{
-                if (presenceLumiere(l, c+1)==true){
+                if (presenceLumiere(l, c+1)==false){
                     allumerLumiere(l, c+1);
                 }else{
                     eteindreLumiere(l, c+1);   
                 }             
-                if (presenceLumiere(l, c-1)==true){
+                if (presenceLumiere(l, c-1)==false){
                     allumerLumiere(l, c-1);
                 }else{
                     eteindreLumiere(l, c-1);   
                 }                
                 if (l==0){ // juste ligne du bas sans coins
-                    if (presenceLumiere(l+1, c)==true){
+                    if (presenceLumiere(l+1, c)==false){
                         allumerLumiere(l+1, c);
                     }else{
                         eteindreLumiere(l+1, c);   
                     }
                 }
                 if (l==4){ // juste ligne du haut sans coins
-                    if (presenceLumiere(l-1, c)==true){
+                    if (presenceLumiere(l-1, c)==false){
                         allumerLumiere(l-1, c);
                     }else{
                         eteindreLumiere(l-1, c);   
@@ -127,35 +127,35 @@ public class GrilleDeJeu {
                 }
             }
         }else{ 
-            if (presenceLumiere(l+1, c)==true){
+            if (presenceLumiere(l+1, c)==false){
                 allumerLumiere(l+1, c);
             }else{
                 eteindreLumiere(l+1, c);   
             }
-            if (presenceLumiere(l-1, c)==true){
+            if (presenceLumiere(l-1, c)==false){
                 allumerLumiere(l-1, c);
             }else{
                 eteindreLumiere(l-1, c);   
             }
             if (c==0){ // pour les colones de droite 
-                if (presenceLumiere(l, c+1)==true){
+                if (presenceLumiere(l, c+1)==false){
                     allumerLumiere(l, c+1);
                 }else{
                     eteindreLumiere(l, c+1);   
                 }
             }else if(c==4){// pour les colones de gauche
-                if (presenceLumiere(l, c-1)==true){
+                if (presenceLumiere(l, c-1)==false){
                     allumerLumiere(l, c-1);
                 }else{
                     eteindreLumiere(l, c-1);   
                 }
             }else { // pour toutes les cases du centre
-                if (presenceLumiere(l, c+1)==true){
+                if (presenceLumiere(l, c+1)==false){
                     allumerLumiere(l, c+1);
                 }else{
                     eteindreLumiere(l, c+1);   
                 }
-                if (presenceLumiere(l, c-1)==true){
+                if (presenceLumiere(l, c-1)==false){
                     allumerLumiere(l, c-1);
                 }else{
                     eteindreLumiere(l, c-1);   
@@ -182,9 +182,9 @@ public class GrilleDeJeu {
     
     public void affichergrilledansconsole(){
         for (int l=4;l>-1;l--){
-            for (int c=4;c>-1;c--){
+            for (int c=0;c<5;c++){
                 System.out.print("["+grille[l][c].lumiereCourant+"]");
-                if ( c== 0){
+                if ( c== 4){
                     System.out.print("\n");
                 }
             }
