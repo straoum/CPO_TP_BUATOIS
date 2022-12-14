@@ -26,18 +26,48 @@ public class fennetredeJeu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jLabel1 = new javax.swing.JLabel();
+        panneau_grille = new javax.swing.JPanel();
+        panneau_info = new javax.swing.JPanel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(204, 255, 255));
+        setPreferredSize(new java.awt.Dimension(750, 1000));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setText("Light Off");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, -1, -1));
+
+        panneau_grille.setBackground(new java.awt.Color(153, 204, 255));
+
+        javax.swing.GroupLayout panneau_grilleLayout = new javax.swing.GroupLayout(panneau_grille);
+        panneau_grille.setLayout(panneau_grilleLayout);
+        panneau_grilleLayout.setHorizontalGroup(
+            panneau_grilleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 520, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+        panneau_grilleLayout.setVerticalGroup(
+            panneau_grilleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 370, Short.MAX_VALUE)
         );
+
+        getContentPane().add(panneau_grille, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 520, 370));
+
+        panneau_info.setBackground(new java.awt.Color(51, 153, 255));
+        panneau_info.setForeground(new java.awt.Color(51, 153, 255));
+
+        javax.swing.GroupLayout panneau_infoLayout = new javax.swing.GroupLayout(panneau_info);
+        panneau_info.setLayout(panneau_infoLayout);
+        panneau_infoLayout.setHorizontalGroup(
+            panneau_infoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+        panneau_infoLayout.setVerticalGroup(
+            panneau_infoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 370, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(panneau_info, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 60, 190, 370));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -78,5 +108,8 @@ public class fennetredeJeu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel panneau_grille;
+    private javax.swing.JPanel panneau_info;
     // End of variables declaration//GEN-END:variables
 }
