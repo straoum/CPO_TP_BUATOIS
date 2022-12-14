@@ -12,13 +12,13 @@ public class Cellules_Lumineuses {
     String lumiereCourant;
 
     public Cellules_Lumineuses() {
-        this.lumiereCourant = "éteint";
+        this.lumiereCourant = "allumé";
     }
     
     
     
    public boolean presenceLumiere(){
-        if (lumiereCourant=="allumé"){
+        if ("allumé".equals(lumiereCourant)){
             return true;
     }else{
             return false;

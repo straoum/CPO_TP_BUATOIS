@@ -4,6 +4,7 @@
  */
 package lights_off_blanc_buatois;
 
+import java.util.Scanner;
 /**
  *
  * @author User
@@ -11,10 +12,15 @@ package lights_off_blanc_buatois;
 public class Partie {
     
     
-    public void 
-    
+    Joueur JoueurCourant;
+    GrilleDeJeu Grille;
   
     public void initialisation_partie(){
+        Grille = new GrilleDeJeu();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Entrer votre nom :");
+        JoueurCourant.nom = sc.next();
+        
         
     }
 }
