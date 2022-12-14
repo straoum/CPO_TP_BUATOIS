@@ -183,8 +183,8 @@ public class GrilleDeJeu {
     public void affichergrilledansconsole(){
         for (int l=4;l>-1;l--){
             for (int c=4;c>-1;c--){
-                System.out.print("["+grille[l][c]+"]");
-                if ( c== 4){
+                System.out.print("["+grille[l][c].lumiereCourant+"]");
+                if ( c== 0){
                     System.out.print("\n");
                 }
             }
