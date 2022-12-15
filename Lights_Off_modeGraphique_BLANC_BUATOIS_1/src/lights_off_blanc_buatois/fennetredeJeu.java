@@ -28,49 +28,146 @@ public class fennetredeJeu extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         panneau_grille = new javax.swing.JPanel();
+        Bouton40 = new javax.swing.JButton();
+        Bouton41 = new javax.swing.JButton();
+        Bouton42 = new javax.swing.JButton();
+        Bouton43 = new javax.swing.JButton();
+        Bouton44 = new javax.swing.JButton();
+        Bouton30 = new javax.swing.JButton();
+        Bouton31 = new javax.swing.JButton();
+        Bouton32 = new javax.swing.JButton();
+        Bouton33 = new javax.swing.JButton();
+        Bouton34 = new javax.swing.JButton();
+        Bouton20 = new javax.swing.JButton();
+        Bouton21 = new javax.swing.JButton();
+        Bouton22 = new javax.swing.JButton();
+        Bouton23 = new javax.swing.JButton();
+        Bouton24 = new javax.swing.JButton();
+        Bouton10 = new javax.swing.JButton();
+        Bouton11 = new javax.swing.JButton();
+        Bouton12 = new javax.swing.JButton();
+        Bouton13 = new javax.swing.JButton();
+        Bouton14 = new javax.swing.JButton();
+        Bouton00 = new javax.swing.JButton();
+        Bouton01 = new javax.swing.JButton();
+        Bouton02 = new javax.swing.JButton();
+        Bouton03 = new javax.swing.JButton();
+        Bouton04 = new javax.swing.JButton();
         panneau_info = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        nom_joueur = new javax.swing.JTextField();
+        boutondemarrerpartie = new javax.swing.JButton();
+        Règles = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        message = new javax.swing.JTextArea();
+        bouton_règles = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 255, 255));
-        setPreferredSize(new java.awt.Dimension(750, 1000));
+        setPreferredSize(new java.awt.Dimension(800, 800));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Light Off");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, -1, -1));
+        jLabel1.setToolTipText("");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 6, 90, 40));
 
         panneau_grille.setBackground(new java.awt.Color(153, 204, 255));
+        panneau_grille.setLayout(new java.awt.GridLayout(5, 5));
 
-        javax.swing.GroupLayout panneau_grilleLayout = new javax.swing.GroupLayout(panneau_grille);
-        panneau_grille.setLayout(panneau_grilleLayout);
-        panneau_grilleLayout.setHorizontalGroup(
-            panneau_grilleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 520, Short.MAX_VALUE)
-        );
-        panneau_grilleLayout.setVerticalGroup(
-            panneau_grilleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 370, Short.MAX_VALUE)
-        );
+        Bouton40.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Bouton40ActionPerformed(evt);
+            }
+        });
+        panneau_grille.add(Bouton40);
+        panneau_grille.add(Bouton41);
+        panneau_grille.add(Bouton42);
+        panneau_grille.add(Bouton43);
+        panneau_grille.add(Bouton44);
+        panneau_grille.add(Bouton30);
+        panneau_grille.add(Bouton31);
+        panneau_grille.add(Bouton32);
+        panneau_grille.add(Bouton33);
+        panneau_grille.add(Bouton34);
+        panneau_grille.add(Bouton20);
+        panneau_grille.add(Bouton21);
+        panneau_grille.add(Bouton22);
+        panneau_grille.add(Bouton23);
+        panneau_grille.add(Bouton24);
+        panneau_grille.add(Bouton10);
+        panneau_grille.add(Bouton11);
+        panneau_grille.add(Bouton12);
+        panneau_grille.add(Bouton13);
+        panneau_grille.add(Bouton14);
+        panneau_grille.add(Bouton00);
+        panneau_grille.add(Bouton01);
+        panneau_grille.add(Bouton02);
+        panneau_grille.add(Bouton03);
+        panneau_grille.add(Bouton04);
 
-        getContentPane().add(panneau_grille, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 520, 370));
+        getContentPane().add(panneau_grille, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 480, 480));
 
         panneau_info.setBackground(new java.awt.Color(51, 153, 255));
         panneau_info.setForeground(new java.awt.Color(51, 153, 255));
+        panneau_info.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout panneau_infoLayout = new javax.swing.GroupLayout(panneau_info);
-        panneau_info.setLayout(panneau_infoLayout);
-        panneau_infoLayout.setHorizontalGroup(
-            panneau_infoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 190, Short.MAX_VALUE)
-        );
-        panneau_infoLayout.setVerticalGroup(
-            panneau_infoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 370, Short.MAX_VALUE)
-        );
+        jLabel2.setText("Nom joueur");
+        panneau_info.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
 
-        getContentPane().add(panneau_info, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 60, 190, 370));
+        jLabel3.setText("Partie");
+        panneau_info.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, -1, -1));
+
+        nom_joueur.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nom_joueurActionPerformed(evt);
+            }
+        });
+        panneau_info.add(nom_joueur, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 70, -1));
+
+        boutondemarrerpartie.setText("Démarrer partie");
+        boutondemarrerpartie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boutondemarrerpartieActionPerformed(evt);
+            }
+        });
+        panneau_info.add(boutondemarrerpartie, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, -1, -1));
+
+        getContentPane().add(panneau_info, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 60, 190, 150));
+
+        Règles.setBackground(new java.awt.Color(0, 153, 255));
+        Règles.setForeground(new java.awt.Color(0, 102, 255));
+        Règles.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel4.setText("Infos jeu");
+        Règles.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
+
+        message.setColumns(20);
+        message.setRows(5);
+        jScrollPane1.setViewportView(message);
+
+        Règles.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 150, 130));
+
+        bouton_règles.setText("Règles");
+        Règles.add(bouton_règles, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, -1, -1));
+
+        getContentPane().add(Règles, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 230, 190, 250));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void nom_joueurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nom_joueurActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nom_joueurActionPerformed
+
+    private void boutondemarrerpartieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutondemarrerpartieActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_boutondemarrerpartieActionPerformed
+
+    private void Bouton40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bouton40ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Bouton40ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -108,7 +205,41 @@ public class fennetredeJeu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Bouton00;
+    private javax.swing.JButton Bouton01;
+    private javax.swing.JButton Bouton02;
+    private javax.swing.JButton Bouton03;
+    private javax.swing.JButton Bouton04;
+    private javax.swing.JButton Bouton10;
+    private javax.swing.JButton Bouton11;
+    private javax.swing.JButton Bouton12;
+    private javax.swing.JButton Bouton13;
+    private javax.swing.JButton Bouton14;
+    private javax.swing.JButton Bouton20;
+    private javax.swing.JButton Bouton21;
+    private javax.swing.JButton Bouton22;
+    private javax.swing.JButton Bouton23;
+    private javax.swing.JButton Bouton24;
+    private javax.swing.JButton Bouton30;
+    private javax.swing.JButton Bouton31;
+    private javax.swing.JButton Bouton32;
+    private javax.swing.JButton Bouton33;
+    private javax.swing.JButton Bouton34;
+    private javax.swing.JButton Bouton40;
+    private javax.swing.JButton Bouton41;
+    private javax.swing.JButton Bouton42;
+    private javax.swing.JButton Bouton43;
+    private javax.swing.JButton Bouton44;
+    private javax.swing.JPanel Règles;
+    private javax.swing.JButton bouton_règles;
+    private javax.swing.JButton boutondemarrerpartie;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea message;
+    private javax.swing.JTextField nom_joueur;
     private javax.swing.JPanel panneau_grille;
     private javax.swing.JPanel panneau_info;
     // End of variables declaration//GEN-END:variables
