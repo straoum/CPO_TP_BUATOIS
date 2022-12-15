@@ -9,6 +9,10 @@ package lights_off_blanc_buatois;
  * @author User
  */
 public class cellule_graphique {
+    Cellules_Lumineuses celluleassocié;
     
+    public cellule_graphique(Cellules_Lumineuses unecellule){
+        celluleassocié=unecellule;
+    }
     
 }

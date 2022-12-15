@@ -58,61 +58,6 @@
         <Property name="columns" type="int" value="5"/>
         <Property name="rows" type="int" value="5"/>
       </Layout>
-      <SubComponents>
-        <Component class="javax.swing.JButton" name="Bouton40">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Bouton40ActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="Bouton41">
-        </Component>
-        <Component class="javax.swing.JButton" name="Bouton42">
-        </Component>
-        <Component class="javax.swing.JButton" name="Bouton43">
-        </Component>
-        <Component class="javax.swing.JButton" name="Bouton44">
-        </Component>
-        <Component class="javax.swing.JButton" name="Bouton30">
-        </Component>
-        <Component class="javax.swing.JButton" name="Bouton31">
-        </Component>
-        <Component class="javax.swing.JButton" name="Bouton32">
-        </Component>
-        <Component class="javax.swing.JButton" name="Bouton33">
-        </Component>
-        <Component class="javax.swing.JButton" name="Bouton34">
-        </Component>
-        <Component class="javax.swing.JButton" name="Bouton20">
-        </Component>
-        <Component class="javax.swing.JButton" name="Bouton21">
-        </Component>
-        <Component class="javax.swing.JButton" name="Bouton22">
-        </Component>
-        <Component class="javax.swing.JButton" name="Bouton23">
-        </Component>
-        <Component class="javax.swing.JButton" name="Bouton24">
-        </Component>
-        <Component class="javax.swing.JButton" name="Bouton10">
-        </Component>
-        <Component class="javax.swing.JButton" name="Bouton11">
-        </Component>
-        <Component class="javax.swing.JButton" name="Bouton12">
-        </Component>
-        <Component class="javax.swing.JButton" name="Bouton13">
-        </Component>
-        <Component class="javax.swing.JButton" name="Bouton14">
-        </Component>
-        <Component class="javax.swing.JButton" name="Bouton00">
-        </Component>
-        <Component class="javax.swing.JButton" name="Bouton01">
-        </Component>
-        <Component class="javax.swing.JButton" name="Bouton02">
-        </Component>
-        <Component class="javax.swing.JButton" name="Bouton03">
-        </Component>
-        <Component class="javax.swing.JButton" name="Bouton04">
-        </Component>
-      </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="panneau_info">
       <Properties>
