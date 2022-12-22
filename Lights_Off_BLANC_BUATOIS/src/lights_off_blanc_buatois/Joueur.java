@@ -11,6 +11,10 @@ package lights_off_blanc_buatois;
 public class Joueur {
     String nom;
 
+    /**Constructeur de la class joueur
+     *
+     * @param nom
+     */
     public Joueur(String nom) {
         this.nom = nom;
     }

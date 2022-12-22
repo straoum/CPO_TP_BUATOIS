@@ -15,7 +15,7 @@ public class Lights_Off_BLANC_BUATOIS {
      */
     public static void main(String[] args) {
         
-        Partie partie1 = new Partie();
+        Partie partie1 = new Partie(); //création de la partie et lancement de celle-ci
         partie1.initialisation_partie();
         partie1.partie();
     }

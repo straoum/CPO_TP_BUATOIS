@@ -15,6 +15,9 @@ public class Partie {
     Joueur JoueurCourant;
     GrilleDeJeu Grille;
   
+    /**Méthode initialisant la partie en créant la grille, en récupérant le nom du joueur après l'avoir créé
+     *
+     */
     public void initialisation_partie(){
         Grille = new GrilleDeJeu();
         Scanner sc = new Scanner(System.in);
@@ -24,6 +27,9 @@ public class Partie {
         //Grille.affichergrilledansconsole();
     }
     
+    /**Méthode réalisant le jeu courant et récupérant les choix de jeu du joueur
+     *
+     */
     public void partie(){
         Scanner rep = new Scanner(System.in);
         System.out.println("1)Niveau 1 avec coup illimité  2)Niveau 2 coup restraint à 50");

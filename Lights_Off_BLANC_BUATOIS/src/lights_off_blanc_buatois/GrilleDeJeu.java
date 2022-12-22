@@ -14,6 +14,10 @@ public class GrilleDeJeu {
     Cellules_Lumineuses[][] grille = new Cellules_Lumineuses[5][5];
     String lumiereCourant;
     
+    /**Constructeur de la class GrilleDeJeu qui crée les 25 cellules de la grille et appel la méthode 
+     * randomlumiere pour déterminer si,au départ, une cellule sera allumée ou éteinte
+     *
+     */
     public GrilleDeJeu(){
         for (int l=0;l<5;l++){
             for (int c=0;c<5;c++){
@@ -25,6 +29,10 @@ public class GrilleDeJeu {
         }
     }
     
+    /**Méthode qui permet de retourner aléatoirement (1 chance sur 2) un booléen à vrai ou faux
+     *
+     * @return
+     */
     public boolean randomlumière(){
         if (Math.random()>0.5){
             return true;
@@ -33,6 +41,12 @@ public class GrilleDeJeu {
         }
     }
     
+    /**Méthode déterminant si une cellule est allumée ou éteinte
+     *
+     * @param l
+     * @param c
+     * @return
+     */
     public boolean presenceLumiere(int l, int c){
        if (grille[l][c].presenceLumiere()==true){
            return true;
@@ -41,18 +55,34 @@ public class GrilleDeJeu {
        }
     }
     
+    /**Méthode permettant d'allumer la lumière sur une cellule
+     *
+     * @param l
+     * @param c
+     */
     public void allumerLumiere(int l, int c){
         if (this.presenceLumiere(l, c)==false){
             grille[l][c].allumerLumiere();
         }
     }
     
+    /**Méthode permettant d'allumer la lumière sur une cellule
+     *
+     * @param l
+     * @param c
+     */
     public void eteindreLumiere(int l, int c){
         if (this.presenceLumiere(l, c)==true){
             grille[l][c].eteindreLumiere();
         }
     }
     
+    /**Méthode permettant de modifier l'état de chaque cellule de la grille en fonction des clics 
+     * de l'utilisateur
+     *
+     * @param l
+     * @param c
+     */
     public void clicutilisateur(int l,int c){
         if (presenceLumiere(l, c)==false){ //allume ou eteint la case cliqué
             allumerLumiere(l, c);
@@ -180,6 +210,9 @@ public class GrilleDeJeu {
         }
     }
     
+    /**Méthode affichant la grille de jeu dans la console
+     *
+     */
     public void affichergrilledansconsole(){
         for (int l=4;l>-1;l--){
             for (int c=0;c<5;c++){

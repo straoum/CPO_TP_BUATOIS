@@ -11,24 +11,37 @@ package lights_off_blanc_buatois;
 public class Cellules_Lumineuses {
     String lumiereCourant;
 
+    /**Constructeur de la class Cellule lumineuse qui affecte par défaut "allumé" à lumierecourant
+     *
+     */
     public Cellules_Lumineuses() {
         this.lumiereCourant = "allumé";
     }
     
-    
-   public boolean presenceLumiere(){
+    /**Méthode déterminant si une cellule est allumée ou éteinte
+     *
+     * @return
+     */
+    public boolean presenceLumiere(){
         if ("allumé".equals(lumiereCourant)){
             return true;
     }else{
             return false;
         }
    }
+
+    /**Méthode permettant d'allumer la lumière sur une cellule
+     *
+     */
     public void allumerLumiere(){
         if (this.presenceLumiere()==false){
             lumiereCourant = "allumé";
         }
     }
     
+    /**Méthode permettant d'allumer la lumière sur une cellule
+     *
+     */
     public void eteindreLumiere(){
         if (this.presenceLumiere()==true){
             lumiereCourant = "éteint";
