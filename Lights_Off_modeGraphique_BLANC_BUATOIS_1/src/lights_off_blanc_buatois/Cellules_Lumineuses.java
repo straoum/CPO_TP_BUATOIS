@@ -10,9 +10,13 @@ package lights_off_blanc_buatois;
  */
 public class Cellules_Lumineuses {
     String lumiereCourant;
+    int X;
+    int Y;
 
-    public Cellules_Lumineuses() {
+    public Cellules_Lumineuses(int x, int y) {
         this.lumiereCourant = "allumé";
+        X = x;
+        Y = y;
     }
     
     
@@ -33,8 +37,8 @@ public class Cellules_Lumineuses {
         if (this.presenceLumiere()==true){
             lumiereCourant = "éteint";
         }
-    }
-        
+    }               
 
-        
+
+
 }
