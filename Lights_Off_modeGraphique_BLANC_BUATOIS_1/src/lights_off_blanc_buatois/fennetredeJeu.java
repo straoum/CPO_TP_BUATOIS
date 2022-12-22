@@ -4,7 +4,7 @@
  */
 package lights_off_blanc_buatois;
 
-import java.util.Random;
+import java.util.Scanner;
 
 /**
  *
@@ -13,20 +13,53 @@ import java.util.Random;
 public class fennetredeJeu extends javax.swing.JFrame {
 
     Joueur JoueurCourant;
-    GrilleDeJeu plateau = new GrilleDeJeu();
+    GrilleDeJeu Grille = new GrilleDeJeu();
+    int coup;
+    int cpt;
     /**
      * Creates new form fennetredeJeu
      */
     public fennetredeJeu() {
         initComponents();
-        panneau_info.setVisible(false);
+        panneau_grille.setVisible(false);
         
         for (int i=4; i>=0; i--){
-            for (int j=0; i>=5; i++){
-                cellule_graphique cellgraph = new cellule_graphique(plateau.grille[i][j]);
+            for (int j=0; j<5; j++){
+                cellule_graphique cellgraph = new cellule_graphique(Grille.grille[i][j]);
+                
+                cellgraph.addActionListener(new java.awt.event.ActionListener() {
+                    @Override
+                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        System.out.println("ON");
+                        coup --;
+                        cpt ++;
+                        coups.setText(coup + "");
+                        coups_barre.setValue(coup);
+                        
+                        if(coup > 0){
+                            Grille.clicutilisateur(cellgraph.celluleassocié.X, cellgraph.celluleassocié.Y);
+                        }
+                        
+                        if(Grille.gagner() == true && coup >= 0){
+                            System.out.println("Gagné !");
+                            message2.setText("Le joueur " + JoueurCourant.nom + " a gagné au bout de + " + cpt + " coups !");
+                        }
+                        if(Grille.gagner() == false && coup <= 0){
+                            message2.setText("Le joueur " + JoueurCourant.nom + " a perdu...");
+                        }
+                        
+                        panneau_grille.repaint();
+                    }
+                });
+                
                 panneau_grille.add(cellgraph);
             }
+            panneau_grille.repaint();
         }
+        // crer une boucle pour cré les boutons dans le panel*
+        modedejeu.removeAllItems();
+        modedejeu.addItem("Niveau 1");
+        modedejeu.addItem("Niveau 2");
     }
 
     /**
@@ -45,20 +78,33 @@ public class fennetredeJeu extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         nom_joueur = new javax.swing.JTextField();
         boutondemarrerpartie = new javax.swing.JButton();
-        Règles = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        modedejeu = new javax.swing.JComboBox<>();
+        Règles2 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        message2 = new javax.swing.JTextArea();
+        Règles3 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        message3 = new javax.swing.JTextArea();
+        bouton_règles3 = new javax.swing.JButton();
+        coups_barre = new javax.swing.JProgressBar();
+        coups = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        message = new javax.swing.JTextArea();
-        bouton_règles = new javax.swing.JButton();
+        jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 255, 255));
-        setPreferredSize(new java.awt.Dimension(800, 800));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Light Off");
         jLabel1.setToolTipText("");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 6, 90, 40));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 6, 80, 40));
 
         panneau_grille.setBackground(new java.awt.Color(153, 204, 255));
         panneau_grille.setLayout(new java.awt.GridLayout(5, 5));
@@ -72,14 +118,14 @@ public class fennetredeJeu extends javax.swing.JFrame {
         panneau_info.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
 
         jLabel3.setText("Partie");
-        panneau_info.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, -1, -1));
+        panneau_info.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, -1, -1));
 
         nom_joueur.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nom_joueurActionPerformed(evt);
             }
         });
-        panneau_info.add(nom_joueur, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 70, -1));
+        panneau_info.add(nom_joueur, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 80, -1));
 
         boutondemarrerpartie.setText("Démarrer partie");
         boutondemarrerpartie.addActionListener(new java.awt.event.ActionListener() {
@@ -89,25 +135,73 @@ public class fennetredeJeu extends javax.swing.JFrame {
         });
         panneau_info.add(boutondemarrerpartie, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, -1, -1));
 
-        getContentPane().add(panneau_info, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 60, 190, 150));
+        jLabel5.setText("DIfficulté");
+        panneau_info.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
 
-        Règles.setBackground(new java.awt.Color(0, 153, 255));
-        Règles.setForeground(new java.awt.Color(0, 102, 255));
-        Règles.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        modedejeu.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        modedejeu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modedejeuActionPerformed(evt);
+            }
+        });
+        panneau_info.add(modedejeu, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 80, -1));
 
-        jLabel4.setText("Infos jeu");
-        Règles.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
+        getContentPane().add(panneau_info, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 60, 220, 150));
 
-        message.setColumns(20);
-        message.setRows(5);
-        jScrollPane1.setViewportView(message);
+        Règles2.setBackground(new java.awt.Color(0, 153, 255));
+        Règles2.setForeground(new java.awt.Color(0, 102, 255));
+        Règles2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Règles.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 150, 130));
+        jLabel6.setText("Infos jeu");
+        Règles2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, -1, -1));
 
-        bouton_règles.setText("Règles");
-        Règles.add(bouton_règles, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, -1, -1));
+        message2.setColumns(20);
+        message2.setRows(5);
+        jScrollPane3.setViewportView(message2);
 
-        getContentPane().add(Règles, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 230, 190, 250));
+        Règles2.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 190, 40));
+
+        Règles3.setBackground(new java.awt.Color(0, 153, 255));
+        Règles3.setForeground(new java.awt.Color(0, 102, 255));
+        Règles3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel7.setText("Infos jeu");
+        Règles3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
+
+        message3.setColumns(20);
+        message3.setRows(5);
+        jScrollPane4.setViewportView(message3);
+
+        Règles3.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 150, 130));
+
+        bouton_règles3.setText("Règles");
+        Règles3.add(bouton_règles3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, -1, -1));
+
+        Règles2.add(Règles3, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 230, 190, 250));
+
+        getContentPane().add(Règles2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 230, 230, 100));
+        getContentPane().add(coups_barre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 270, 20));
+
+        coups.setText("0");
+        getContentPane().add(coups, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 60, -1));
+
+        jLabel8.setText("Coups");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, -1, -1));
+
+        jPanel1.setBackground(new java.awt.Color(0, 153, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel4.setText("Règles du Lght Off");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 5, -1, -1));
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jTextArea1.setText("Le jeu consiste en une grille de lumières \nde 5 par 5. \nAu début du jeu, un nombre \naléatoire ou un modèle mémorisé de ces\n lumières s'allume. En appuyant sur \nl'une des lumières, on la fait basculer\nainsi que les quatre lumières \nadjacentes. Le but du puzzle est \nd'éteindre toutes les lumières.\nLe niveau 1 de difficulté permet \nd'avoir un nombre de  coups illimité \ncontrairement au niveau 2 qui ne laisse \nque 50 coups pour gagner.");
+        jScrollPane1.setViewportView(jTextArea1);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 220, 140));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 340, 230, 170));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -118,7 +212,27 @@ public class fennetredeJeu extends javax.swing.JFrame {
 
     private void boutondemarrerpartieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutondemarrerpartieActionPerformed
         // TODO add your handling code here:
+        Grille.Vider();
+        Grille.generer();
+        panneau_grille.repaint();
+        JoueurCourant = new Joueur(nom_joueur.getText());
+        panneau_grille.setVisible(true);
+        cpt = 0;
+        System.out.println(modedejeu.getItemCount());
+        if(modedejeu.getItemCount() == 2){
+            coup = 999999999;
+        }else{
+            coup = 50;
+        }
+        coups_barre.setMinimum(0);
+        coups_barre.setMaximum(coup);
+        coups_barre.setValue(coup);
+        coups.setText(coup + "");
     }//GEN-LAST:event_boutondemarrerpartieActionPerformed
+
+    private void modedejeuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modedejeuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_modedejeuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -156,15 +270,28 @@ public class fennetredeJeu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel Règles;
-    private javax.swing.JButton bouton_règles;
+    private javax.swing.JPanel Règles2;
+    private javax.swing.JPanel Règles3;
+    private javax.swing.JButton bouton_règles3;
     private javax.swing.JButton boutondemarrerpartie;
+    private javax.swing.JLabel coups;
+    private javax.swing.JProgressBar coups_barre;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea message;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea message2;
+    private javax.swing.JTextArea message3;
+    private javax.swing.JComboBox<String> modedejeu;
     private javax.swing.JTextField nom_joueur;
     private javax.swing.JPanel panneau_grille;
     private javax.swing.JPanel panneau_info;
