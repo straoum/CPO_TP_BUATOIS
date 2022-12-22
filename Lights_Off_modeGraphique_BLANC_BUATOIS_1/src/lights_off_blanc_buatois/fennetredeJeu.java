@@ -4,6 +4,8 @@
  */
 package lights_off_blanc_buatois;
 
+import java.util.Random;
+
 /**
  *
  * @author User
@@ -11,7 +13,7 @@ package lights_off_blanc_buatois;
 public class fennetredeJeu extends javax.swing.JFrame {
 
     Joueur JoueurCourant;
-    GrilleDeJeu Grille;
+    GrilleDeJeu plateau = new GrilleDeJeu();
     /**
      * Creates new form fennetredeJeu
      */
@@ -21,11 +23,10 @@ public class fennetredeJeu extends javax.swing.JFrame {
         
         for (int i=4; i>=0; i--){
             for (int j=0; i>=5; i++){
-                cellule_graphique cellgraph = new cellulegraphique(GrilleDeJeu.Grille[i][j]);
+                cellule_graphique cellgraph = new cellule_graphique(plateau.grille[i][j]);
                 panneau_grille.add(cellgraph);
             }
         }
-        // crer une boucle pour cré les boutons dans le panel
     }
 
     /**
