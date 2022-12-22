@@ -17,7 +17,7 @@ public class GrilleDeJeu {
     public GrilleDeJeu(){
         for (int l=0;l<5;l++){
             for (int c=0;c<5;c++){
-                grille[l][c]=new Cellules_Lumineuses();
+                grille[l][c]=new Cellules_Lumineuses(l, c);
                 if (randomlumière()==true){
                     eteindreLumiere(l,c);
                 }
@@ -186,6 +186,26 @@ public class GrilleDeJeu {
                 System.out.print("["+grille[l][c].lumiereCourant+"]");
                 if ( c== 4){
                     System.out.print("\n");
+                }
+            }
+        }
+    }
+    
+    public void Vider(){
+        for (int l=4;l>-1;l--){
+            for (int c=0;c<5;c++){
+                grille[l][c].eteindreLumiere();
+            }
+        }
+    }
+    
+    public void generer(){
+        for (int l=0;l<5;l++){
+            for (int c=0;c<5;c++){
+                if (randomlumière()==true){
+                    eteindreLumiere(l,c);
+                }else{
+                    allumerLumiere(l, c);
                 }
             }
         }
